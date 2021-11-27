@@ -29,6 +29,8 @@ namespace Hole
         }
         public IEnumerable<T> PopAll()
         {
+            if (top == null)
+                throw new Exception("Empty");
             List<T> outpost = new List<T>();
             while (Count!=0)
                 outpost.Add(Pop());
